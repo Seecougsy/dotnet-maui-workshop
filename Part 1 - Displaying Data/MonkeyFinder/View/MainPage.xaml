@@ -5,5 +5,20 @@
              xmlns:model="clr-namespace:MonkeyFinder.Model"
              x:Class="MonkeyFinder.View.MainPage">
 
-    
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:Monkey}">
+                <model:Monkey Name="Baboon" />
+                <model:Monkey Name="Capuchin Monkey" />
+                <model:Monkey Name="Red-Shanked douc" />
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Monkey">
+                <HorizontalStackLayout Padding="10">
+                    <Label Text="{Binding Name}" FontSize="24"/>
+                </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
